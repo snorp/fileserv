@@ -27,7 +27,7 @@ class BrowseController < ApplicationController
   private
 
   def handle_download
-    x_send_file(@real_path)
+    x_send_file(@real_path, :heder => 'X-SENDFILE')
     render :nothing => true
   end
 
