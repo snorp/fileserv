@@ -1,0 +1,72 @@
+/* Web Yast Stylesheet 
+*
+* (c) 2009 Jakub Steiner, Novell, Inc.
+*/
+
+body {
+  font: 10pt/130% 'Droid Sans', 'DeJaVu Sans', Sans-serif;
+  color: #000; background-color: #ddd;
+}
+
+.centeredblock {
+  max-width: 750px;
+  margin: 16px auto 16px;
+  position: relative;
+}
+
+.roundedbox {
+  background: #fff;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+}
+
+#header { 
+  background: #fff url(/images/fill-gradient.png) repeat-x 0 bottom;
+  width: 750px; height: 90px; 
+}
+  #header>.valign {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    height: inherit;
+    padding: 16px 16px 16px 96px;
+  }
+  
+  #header .icon {
+    width: 48px; height: 48px;
+    position: absolute;
+    vertical-align: middle;
+    top: 50%; left: 32px; margin-top: -24px;
+  }
+
+#content {
+  min-height: 400px;
+}
+  #content .container {
+    padding: 16px;
+  }
+
+.filelisting td {
+  padding: 6px;
+}
+
+.listing_name {
+  width: 50%
+}
+
+.listing_time {
+  font-family: monospace;
+  font-style: italic;
+}
+
+.listing_size {
+  font-family: monospace;
+}
+
+a {
+  color: #204a87;
+}
+  
+.copy { color: #888; font-size: 80%; margin-left: 2em; }

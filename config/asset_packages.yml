@@ -1,0 +1,14 @@
+--- 
+javascripts: 
+- base: 
+  - jquery
+  - jquery.history
+  - jrails
+  - dragdrop
+  - jquery-ui
+  - application
+  - fileserv
+stylesheets: 
+- base:
+  - fileserv
+

@@ -1,0 +1,4 @@
+<% @path.split('/').each do |part| %>
+  <% next if part.empty? %>
+  <li><%=h part %></li>
+<% end %>

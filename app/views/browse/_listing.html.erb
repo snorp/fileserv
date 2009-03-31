@@ -1,0 +1,36 @@
+<div class="browsernav">
+  <%= browse_link :name => 'Home', :path => '/', :directory => true %> /
+  <% current_path = "" %>
+  <% @path.split('/').each do |part| %>
+    <% next if part.empty? %>
+    <% current_path = "#{current_path}/#{part}" %>
+    <%= browse_link :path => current_path, :directory => true %> /
+  <% end %>
+</div>
+
+<table class="filelisting">
+  <thead>
+    <tr>
+      <th/>
+      <th class="listing_name">Name</th>
+      <th>Last Modified</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @listing.each do |item| %>
+      <tr>
+        <td><%= browse_icon(item[:mime]) %></td>
+        <td class="listing_name">
+          <%= browse_link :path=> item[:path], :directory => item[:mime] == "inode/directory" %>
+        </td>
+        <td class="listing_time"><%=h item[:stat].mtime %></td>
+        <% if not item[:stat].directory? %>
+          <td class="listing_size"><%=h number_to_human_size(item[:stat].size) %></td>
+        <% else %>
+          <td/>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+    <%= stylesheet_link_merged :base %>
+    <%= yield :stylesheet_includes %>
+    <style type="text/css">
+      <%= yield :stylesheets %>
+    </style>
+
+    <%= javascript_include_merged :base %>
+    <%= yield :javascripts %>
+
+    <%= yield :meta %>
+    <title>Home Server</title>
+  </head>
+  <body id="shell" onload="">
+    <div class="centeredblock roundedbox" id="header">
+      <div class="valign">
+        <div class="icon"><img src="/images/suse-logo.png"></div>
+        <h3 class="title">Home Server</h3>
+      </div>
+    </div>
+
+    <div class="centeredblock roundedbox" id="content">
+      <div class="container">
+        <%= yield :layout %>
+      </div>
+
+    </div>
+    <div class="centeredblock" id="footer">
+      <%= link_to 'Download Torrent', 'http://fatman:8000' %> |
+      <%= link_to 'Monitoring', 'http://fatman:8001' %>
+    </div>
+  </body>
+</html>
