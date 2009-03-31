@@ -8,7 +8,7 @@ class BrowseController < ApplicationController
       if File.directory? @real_path
         create_listing
       else
-        send_file @real_path
+        handle_download
       end
     else
       create_share_listing
@@ -25,6 +25,11 @@ class BrowseController < ApplicationController
   end
 
   private
+
+  def handle_download
+    x_send_file(@real_path)
+    render :nothing => true
+  end
 
   def create_share_listing
     @listing = []
