@@ -28,7 +28,6 @@ class BrowseController < ApplicationController
 
   def handle_download
     x_send_file @real_path
-    render :nothing => true
   end
 
   def create_share_listing
