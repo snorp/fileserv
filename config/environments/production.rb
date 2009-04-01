@@ -21,6 +21,7 @@ config.action_view.cache_template_loading            = true
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
 
+require RAILS_ROOT + "/vendor/plugins/x_send_file/init.rb"
 XSendFile::Plugin.replace_send_file!
 
 SHARES = YAML::load(File.read('config/shares.yml'))
